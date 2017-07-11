@@ -14,27 +14,48 @@
  
 <items   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:noNamespaceSchemaLocation="items.xsd">
-    
-    <relations>
-    	<relation code="RecipeFoodRelation" localized="false" generate="true" autocreate="true">
-       	<sourceElement type="Recipes" qualifier="recipe" cardinality="one" />
-       	<targetElement type="Food" qualifier="food" cardinality="many"/>
-    	</relation>
-	</relations> 
+            
+     <relations>
+        <relation code="RecipeProductFood" localized="false" generate="true" autocreate="true">
+        <deployment table="Recipe2Food" typecode="20003"/>
+            <sourceElement type="Recipe" qualifier="recipe" cardinality="many" ordered="false">
+            	<modifiers read="true" write="true" search="true" optional="true" />
+            </sourceElement>
+            <targetElement type="Food" qualifier="foods" cardinality="many" collectiontype="list" ordered="true">
+            	<modifiers read="true" write="true" search="true" optional="true" />
+            </targetElement>
+        </relation>
+    </relations>
     
     <itemtypes>
-        <itemtype code="Recipes" generate="true" autocreate="true">
-            <deployment table="RecipesRecipe" typecode="10234" />
+    
+        <itemtype code="Recipe" generate="true" autocreate="true">
+            <deployment table="RecipeTable" typecode="20001" />
             <attributes>
-                <attribute qualifier="code" type="java.lang.String" >
+                <attribute qualifier="idRecipe" type="java.lang.String" >
                     <persistence type="property"/>
                     <modifiers optional="false" unique="true"/>
                 </attribute>
-                <attribute qualifier="capacity" type="java.lang.Integer">
-                    <description>Capacity</description>
-                    <persistence type="property" />
+                <attribute qualifier="name" type="java.lang.String" >
+                    <persistence type="property"/>
+                    <modifiers optional="false" unique="false"/>
                 </attribute>
             </attributes>
         </itemtype>
+        
+        <itemtype code="Food" generate="true" autocreate="true">
+            <deployment table="FoodTable" typecode="20002" />
+            <attributes>
+                <attribute qualifier="idFood" type="java.lang.String" >
+                    <persistence type="property"/>
+                    <modifiers optional="false" unique="true"/>
+                </attribute>
+                <attribute qualifier="description" type="java.lang.String" >
+                    <persistence type="property"/>
+                    <modifiers optional="false" unique="false"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+        
     </itemtypes>
 </items>

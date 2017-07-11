@@ -14,13 +14,12 @@
 --><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
    <extension abstractclassprefix="Generated" classprefix="Recipes" managername="RecipesManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="recipes">
-       
-   <requires-extension name="Food"/>        
+               
       <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
       <!-- <requires-extension name="cms"/> -->         
       
 
-      <coremodule generated="true" manager="de.hybris.platform.recipes.jalo.RecipesManager" packageroot="de.hybris.platform.recipes"/>
+      <coremodule generated="true" manager="en.hybris.platform.recipes.jalo.RecipesManager" packageroot="en.hybris.platform.recipes"/>
 
       <webmodule jspcompile="false" webroot="/recipes"/>
 					

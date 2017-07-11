@@ -38,21 +38,21 @@
 	
 	<!--  Example how to override a manager -->
 	<!--
-	<bean id="core.productManager"   class="de.hybris.platform.recipes.jalo.RecipesProductManager" 	init-method="init"	destroy-method="destroy" />
+	<bean id="core.productManager"   class="en.hybris.platform.recipes.jalo.RecipesProductManager" 	init-method="init"	destroy-method="destroy" />
 	-->
 	
 	
  	<!--  Example how to configure the class to use for jalo session creation -->
 	<!--
 	<bean id="jalosession"   class="de.hybris.platform.jalo.JaloSessionFactory">
-		<property name="targetClassName" value="de.hybris.platform.recipes.jalo.RecipesJaloSession"/>
+		<property name="targetClassName" value="en.hybris.platform.recipes.jalo.RecipesJaloSession"/>
 	</bean>
 	-->
 
 	
 	<!--  Example how to override an item  -->
 	<!-- 
-	<bean id="de.hybris.platform.jalo.product.Product" class="de.hybris.platform.recipes.jalo.RecipesProduct" scope="prototype" />		
+	<bean id="de.hybris.platform.jalo.product.Product" class="en.hybris.platform.recipes.jalo.RecipesProduct" scope="prototype" />		
  	-->
 
 	<!--  
@@ -61,7 +61,7 @@
      -->
 	
 	<!-- 
-	<bean id="recipesProfBean" class="de.hybris.platform.recipes.aop.RecipesProfilingAspect"/>
+	<bean id="recipesProfBean" class="en.hybris.platform.recipes.aop.RecipesProfilingAspect"/>
 	<aop:config proxy-target-class="true">
   		<aop:aspect id="recipesProfAspect" ref="recipesProfBean" >
     	  <aop:pointcut id="profiledMethods" 
